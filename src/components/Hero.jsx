@@ -2,20 +2,12 @@ import { motion } from 'framer-motion';
 import { styles } from '../styles';
 import { bwmap, worldmap } from '../assets';
 import { useEffect, useState } from 'react';
-import p1 from '../assets/images/projects/p1.png';
-import p2 from '../assets/images/projects/p2.png';
-import p3 from '../assets/images/projects/p3.png';
 
 const Hero = () => {
   const keywords = [
     'Full‑Stack Developer',
     'Problem Solver',
     'Tech Enthusiast',
-  ];
-  const thumbs = [
-    p1,
-    p2,
-    p3,
   ];
   const [kwIndex, setKwIndex] = useState(0);
   useEffect(() => {
@@ -70,36 +62,24 @@ const Hero = () => {
               className="mt-3 sm:mt-4 text-[14px] sm:text-[18px] font-medium text-gray-700">
               {keywords[kwIndex]}
             </motion.div>
+              <div className="mt-5 sm:mt-6 flex gap-3">
+                  <a
+                      href="#projects"
+                      className="px-4 py-2 rounded-lg border border-gray-900 bg-gray-900 text-white text-sm sm:text-base hover:opacity-90 transition"
+                  >
+                      View Projects
+                  </a>
+                  <a
+                      href="#about"
+                      className="px-4 py-2 rounded-lg border border-gray-300 bg-white/70 text-gray-900 text-sm sm:text-base backdrop-blur hover:bg-white transition"
+                  >
+                      About Me
+                  </a>
+              </div>
           </div>
           <div
             className="w-screen flex flex-col items-start
             justify-center sm:-ml-[3rem] xxs:mt-4"></div>
-
-          <div
-              className="absolute right-0 sm:-right-8 lg:-right-16 top-[16vh] sm:top-[12vh] lg:top-[10vh] hidden md:block z-[5] pointer-events-none"
-            aria-hidden="true"
-          >
-            <div className="relative w-[360px] sm:w-[440px] lg:w-[520px] h-[340px] sm:h-[420px] lg:h-[480px]">
-              {/* Tile 1: top right */}
-              <img
-                src={thumbs[0]}
-                alt="project thumbnail 1"
-                className="absolute top-0 right-0 w-[38%] sm:w-[42%] lg:w-[44%] object-cover rounded-xl opacity-80 blur-[2px] brightness-95 shadow-lg grayscale"
-              />
-              {/* Tile 2: center bottom */}
-              <img
-                src={thumbs[1]}
-                alt="project thumbnail 2"
-                className="absolute bottom-2.5 left-1/2 -translate-x-1/2 w-[56%] sm:w-[58%] lg:w-[60%] object-cover rounded-xl opacity-80 blur-[2px] brightness-95 shadow-md rotate-[1.5deg] grayscale"
-              />
-              {/* Tile 3: bottom right */}
-              <img
-                src={thumbs[2]}
-                alt="project thumbnail 3"
-                className="absolute bottom-4 right-0 w-[28%] sm:w-[30%] lg:w-[32%] object-cover rounded-xl opacity-80 blur-[2px] brightness-95 shadow-md -rotate-[2deg] grayscale"
-              />
-            </div>
-          </div>
         </div>
 
         <div
