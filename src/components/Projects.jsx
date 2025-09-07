@@ -5,6 +5,7 @@ import { styles } from '../styles';
 import { github, pineapple, pineappleHover } from '../assets';
 import { projects } from '../constants';
 import { fadeIn, textVariant, staggerContainer } from '../utils/motion';
+// 이미 있다면 맨 아래에 추가
 
 const ProjectCard = ({
   id,
@@ -16,12 +17,14 @@ const ProjectCard = ({
   index,
   active,
   handleClick,
+  onOpenComingSoon,
 }) => {
   return (
     <motion.div
       variants={fadeIn('right', 'spring', index * 0.5, 0.75)}
-      className={"relative lg:flex-1 flex-1 flex items-center justify-center min-w-[220px] h-[420px] cursor-pointer card-shadow"}
-      onClick={() => handleClick(id)}>
+      className={`${active === id ? 'lg:flex-[1.25] flex-[1.05]' : 'lg:flex-[0.9] flex-[0.95]'} relative flex items-center justify-center min-w-[220px] h-[420px] cursor-pointer card-shadow transition-all duration-300`}
+      onClick={() => handleClick(id)}
+    >
       <div
         className="absolute top-0 left-0 z-10 bg-jetLight
       h-full w-full opacity-[0.5] rounded-[24px]"></div>
@@ -36,7 +39,7 @@ const ProjectCard = ({
         <div className="flex items-center justify-start pr-[4.5rem]">
           <h3
             className="font-extrabold font-beckman uppercase w-[200px] h-[30px]
-        whitespace-nowrap sm:text-[27px] text-[18px] text-timberWolf tracking-[1px]
+        whitespace-nowrap sm:text-[27px] text-timberWolf tracking-[1px]
         absolute z-0 lg:bottom-[7rem] lg:rotate-[-90deg] lg:origin-[0,0]
         leading-none z-20">
             {name}
@@ -49,7 +52,7 @@ const ProjectCard = ({
             flex-col bg-[rgba(122,122,122,0.5)] rounded-b-[24px] z-20">
             <div className="absolute inset-0 flex justify-end m-3">
               <div
-                onClick={() => window.open(repo, '_blank')}
+                onClick={(e) => { e.stopPropagation(); window.open(repo, '_blank'); }}
                 className="bg-night sm:w-11 sm:h-11 w-10 h-10 rounded-full
                   flex justify-center items-center cursor-pointer
                   sm:opacity-[0.9] opacity-[0.8]">
@@ -72,34 +75,57 @@ const ProjectCard = ({
               font-poppins tracking-[1px]">
               {description}
             </p>
-            <button
-              className="live-demo flex justify-between
-              sm:text-[16px] text-[14px] text-timberWolf
-              font-bold font-beckman items-center py-5 pl-2 pr-3
-              whitespace-nowrap gap-1 sm:w-[138px] sm:h-[50px]
-              w-[125px] h-[46px] rounded-[10px] glassmorphism
-              sm:mt-[22px] mt-[16px] hover:bg-battleGray
-              hover:text-eerieBlack transition duration-[0.2s]
-              ease-in-out"
-              onClick={() => window.open(demo, '_blank')}
-              onMouseOver={() => {
-                document
-                  .querySelector('.btn-icon')
-                  .setAttribute('src', pineappleHover);
-              }}
-              onMouseOut={() => {
-                document
-                  .querySelector('.btn-icon')
-                  .setAttribute('src', pineapple);
-              }}>
-              <img
-                src={pineapple}
-                alt="pineapple"
-                className="btn-icon sm:w-[34px] sm:h-[34px]
-                  w-[30px] h-[30px] object-contain"
-              />
-              LIVE DEMO
-            </button>
+            <div className="flex gap-3 sm:mt-[22px] mt-[16px]">
+              <button
+                className="live-demo flex justify-between
+                sm:text-[16px] text-[14px] text-timberWolf
+                font-bold font-beckman items-center py-5 pl-2 pr-3
+                whitespace-nowrap gap-1 sm:w-[138px] sm:h-[50px]
+                w-[125px] h-[46px] rounded-[10px] glassmorphism
+                hover:bg-battleGray
+                hover:text-eerieBlack transition duration-[0.2s]
+                ease-in-out"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  if (demo) {
+                    window.open(demo, '_blank');
+                  } else {
+                    if (onOpenComingSoon) onOpenComingSoon();
+                  }
+                }}
+                onMouseOver={(e) => {
+                  const icon = e.currentTarget.querySelector('.btn-icon');
+                  if (icon) icon.setAttribute('src', pineappleHover);
+                }}
+                onMouseOut={(e) => {
+                  const icon = e.currentTarget.querySelector('.btn-icon');
+                  if (icon) icon.setAttribute('src', pineapple);
+                }}>
+                <img
+                  src={pineapple}
+                  alt="pineapple"
+                  className="btn-icon sm:w-[34px] sm:h-[34px]
+                    w-[30px] h-[30px] object-contain"
+                />
+                LIVE DEMO
+              </button>
+              <button
+                className="view-code flex justify-between
+                  sm:text-[16px] text-[14px] text-timberWolf
+                  font-bold font-beckman items-center py-5 px-3
+                  w-[140px] h-[46px] rounded-[10px] glassmorphism
+                  hover:bg-battleGray hover:text-eerieBlack
+                  transition duration-[0.2s] ease-in-out"
+                onClick={(e) => { e.stopPropagation(); window.open(repo, '_blank'); }}
+              >
+                <img
+                  src={github}
+                  alt="github"
+                  className="sm:w-[24px] sm:h-[24px] w-[20px] h-[20px] object-contain"
+                />
+                VIEW CODE
+              </button>
+            </div>
           </div>
         </>
       )}
@@ -109,6 +135,7 @@ const ProjectCard = ({
 
 const Projects = () => {
   const [active, setActive] = useState('project-2');
+  const [comingSoonOpen, setComingSoonOpen] = useState(false);
 
   return (
     <div className="-mt-[6rem]">
@@ -143,10 +170,25 @@ const Projects = () => {
               {...project}
               active={active}
               handleClick={setActive}
+              onOpenComingSoon={() => setComingSoonOpen(true)}
             />
           ))}
         </div>
       </motion.div>
+      {comingSoonOpen && (
+        <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/50">
+          <div role="dialog" aria-modal="true" className="bg-white rounded-lg p-6 shadow-2xl w-[320px] text-center">
+            <p className="text-lg font-semibold text-gray-900">준비중입니다 🚧</p>
+            <p className="mt-2 text-sm text-gray-600">라이브 데모는 곧 공개될 예정입니다.</p>
+            <button
+              className="mt-4 px-4 py-2 rounded-md bg-gray-900 text-white hover:bg-gray-700 transition"
+              onClick={() => setComingSoonOpen(false)}
+            >
+              닫기
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

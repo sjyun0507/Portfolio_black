@@ -45,9 +45,9 @@ import dcc from './company/dcc.png';
 import kelhel from './company/kelhel.png';
 import microverse from './company/microverse.png';
 
-import komikult from './projects/komikult.png';
-import leaderboard from './projects/leaderboard.png';
-import math from './projects/math-magicians.png';
+import ticketory from './projects/ticketory.png';
+import kiosk from './projects/kiosk.png';
+import parking from './projects/parking.png';
 import movie from './projects/movie-metro.png';
 import nyeusi from './projects/nyeusi.png';
 import space from './projects/space-hub.png';
@@ -80,9 +80,8 @@ export {
   reactjs,
   redux,
   tailwind,
-  komikult,
-  leaderboard,
-  math,
+  ticketory,
+    parking,
   movie,
   nyeusi,
   space,
@@ -103,4 +102,5 @@ export {
   googlesheets,
   canva,
   vercel,
+    kiosk,
 };
