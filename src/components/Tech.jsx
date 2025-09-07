@@ -15,13 +15,16 @@ const Tech = () => {
 
         <div className="flex flex-wrap justify-center gap-10 mt-14 bg-white/30 rounded-lg p-6">
         {technologies.map((technology) => (
-          <div className="w-28 h-28" key={technology.name}>
-            <img
+          <div className="w-24 h-24" key={technology.name}>
+            <motion.img
               src={technology.icon}
               alt={technology.name}
               loading="lazy"
               className="w-full h-full object-contain"
               title={technology.name}
+              whileHover={{ scale: 1.1, rotate: 5 }}
+              whileTap={{ scale: 0.95, rotate: -5 }}
+              transition={{ type: "spring", stiffness: 300 }}
             />
           </div>
         ))}
