@@ -77,9 +77,15 @@ const Hero = () => {
                   </a>
               </div>
           </div>
-          <div
-            className="w-screen flex flex-col items-start
-            justify-center sm:-ml-[3rem] xxs:mt-4"></div>
+          <div className="hidden sm:flex ml-auto mb-20 items-end justify-center self-end">
+            <div className="max-w-[500px] bg-white/70 backdrop-blur rounded-xl shadow-md p-5 text-gray-900">
+              <p className="text-base leading-relaxed">
+                  안녕하세요, 저는 <span className="font-semibold">풀스택 개발자 윤서정</span>입니다. <br/>
+                  React와 Spring Boot를 중심으로 웹 서비스를 직접 설계하고 구현하는 데 관심이 많습니다.
+                  사용자 경험을 중시하면서도 안정적인 시스템을 만드는 것이 목표입니다.
+              </p>
+            </div>
+          </div>
         </div>
 
         <div
