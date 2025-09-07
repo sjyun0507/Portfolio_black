@@ -24,14 +24,23 @@ import figma from './tech/figma.png';
 import git from './tech/git.png';
 import html from './tech/html.png';
 import javascript from './tech/javascript.png';
-import nodejs from './tech/nodejs.png';
 import reactjs from './tech/reactjs.png';
 import redux from './tech/redux.png';
 import tailwind from './tech/tailwind.png';
-import typescript from './tech/typescript.png';
-import graphql from './tech/graphql.png';
-import postgresql from './tech/postgresql.png';
-import rubyrails from './tech/rubyrails.png';
+
+import spring from './tech/spring.svg';
+import springboot from './tech/springboot.svg';
+import springsecurity from './tech/springsecurity.svg';
+import json from './tech/json.svg';
+import mariadb from './tech/mariadb.svg';
+import swagger from './tech/swagger.svg';
+import gradle from './tech/gradle.svg';
+import filezilla from './tech/filezilla.svg';
+import terminus from './tech/termius.svg';
+import notion from './tech/notion.svg';
+import googlesheets from './tech/googlesheets.svg';
+import canva from './tech/canva.svg';
+import vercel from './tech/vercel.svg';
 
 import coverhunt from './company/coverhunt.png';
 import dcc from './company/dcc.png';
@@ -68,16 +77,11 @@ export {
   docker,
   figma,
   git,
-  graphql,
   html,
   javascript,
-  nodejs,
-  postgresql,
-  rubyrails,
   reactjs,
   redux,
   tailwind,
-  typescript,
   komikult,
   leaderboard,
   math,
@@ -88,7 +92,17 @@ export {
   dcc,
   kelhel,
   microverse,
+  spring,
+  springboot,
+  springsecurity,
+  json,
+  mariadb,
+  swagger,
+  gradle,
+  filezilla,
+  terminus,
+  notion,
+  googlesheets,
+  canva,
+  vercel,
 };
-
-export class mariaDB {
-}

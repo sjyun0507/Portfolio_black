@@ -8,17 +8,27 @@ import {
   css,
   reactjs,
   tailwind,
-  nodejs,
+  springboot,
+  springsecurity,
+  json,
+  mariadb,
+  swagger,
+  gradle,
+  filezilla,
+  terminus,
+  notion,
+  googlesheets,
+  canva,
+  vercel,
   git,
   figma,
+    spring,
   komikult,
   leaderboard,
   math,
-  movie,
-  nyeusi,
   coverhunt,
   kelhel,
-  microverse,
+    microverse
 } from '../assets';
 
 export const navLinks = [
@@ -77,16 +87,65 @@ const technologies = [
     icon: tailwind,
   },
   {
-    name: 'Node JS',
-    icon: nodejs,
-  },
-  {
     name: 'git',
     icon: git,
   },
   {
     name: 'figma',
     icon: figma,
+  },
+  {
+    name: 'Spring',
+    icon: spring,
+  },
+  {
+    name: 'Spring Boot',
+    icon: springboot,
+  },
+  {
+    name: 'Spring Security',
+    icon: springsecurity,
+  },
+
+  {
+    name: 'JSON',
+    icon: json,
+  },
+  {
+    name: 'MariaDB',
+    icon: mariadb,
+  },
+  {
+    name: 'Swagger',
+    icon: swagger,
+  },
+  {
+    name: 'Gradle',
+    icon: gradle,
+  },
+  {
+    name: 'FileZilla',
+    icon: filezilla,
+  },
+  {
+    name: 'Terminus',
+    icon: terminus,
+  },
+  {
+    name: 'Notion',
+    icon: notion,
+  },
+  {
+    name: 'Google Sheets',
+    icon: googlesheets,
+  },
+  {
+    name: 'Canva',
+    icon: canva,
+  },
+  {
+    name: 'Vercel',
+    icon: vercel,
   },
 ];
 
