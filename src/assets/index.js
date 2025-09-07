@@ -48,7 +48,7 @@ import intellij from './tech/IntelliJ IDEA.png';
 import postman from './tech/Postman.png';
 import jQuery from './tech/jQuery.png';
 import Kaggle from './tech/Kaggle.png';
-import Webstorm from './tech/Webstorm.png';
+import Webstorm from './tech/WebStorm.png';
 
 import ticketory from './projects/ticketory.png';
 import kiosk from './projects/kiosk.png';
