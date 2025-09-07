@@ -20,7 +20,7 @@ import css from './tech/CSS3.png';
 import figma from './tech/Figma.png';
 import git from './tech/Git.png';
 import html from './tech/HTML5.png';
-import javascript from './tech/javaScript.png';
+import javascript from './tech/JavaScript.png';
 import reactjs from './tech/React.png';
 import tailwind from './tech/Tailwind CSS.png';
 
