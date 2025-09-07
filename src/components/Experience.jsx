@@ -76,18 +76,14 @@ const Experience = () => {
           className="mt-12 flex justify-center"
           variants={textVariant()}
         >
-          <button
+          <a
+            href="/resume.pdf"
+            download
             className="live-demo flex justify-between sm:text-[18px] text-[14px]
               text-timberWolf font-bold font-beckman items-center py-5 px-4
               whitespace-nowrap gap-2 sm:w-[160px] sm:h-[60px] w-[135px] h-[48px]
               rounded-[10px] bg-jetLight hover:bg-battleGray hover:text-eerieBlack
               transition duration-200 ease-in-out"
-            onClick={() =>
-              window.open(
-                'resume link', // paste your resume URL here
-                '_blank'
-              )
-            }
             onMouseOver={() => {
               document.querySelector('.download-btn')
                 .setAttribute('src', downloadHover);
@@ -103,7 +99,7 @@ const Experience = () => {
               alt="download"
               className="download-btn sm:w-[26px] sm:h-[26px] w-[23px] h-[23px] object-contain"
             />
-          </button>
+          </a>
         </motion.div>
       </div>
     </>
