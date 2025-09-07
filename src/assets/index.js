@@ -42,6 +42,13 @@ import coverhunt from './company/coverhunt.png';
 import dcc from './company/dcc.png';
 import kelhel from './company/kelhel.png';
 import microverse from './company/microverse.png';
+import axios from './tech/Azios.png';
+import DBeaver from './tech/DBeaver.png';
+import intellij from './tech/IntelliJ IDEA.png';
+import postman from './tech/Postman.png';
+import jQuery from './tech/jQuery.png';
+import Kaggle from './tech/Kaggle.png';
+import Webstorm from './tech/Webstorm.png';
 
 import ticketory from './projects/ticketory.png';
 import kiosk from './projects/kiosk.png';
@@ -100,4 +107,11 @@ export {
   vercel,
     kiosk,
     vite,
+    axios,
+    DBeaver,
+    intellij,
+    postman,
+    jQuery,
+    Kaggle,
+    Webstorm,
 };

@@ -29,7 +29,7 @@ import {
     vite,
     coverhunt,
     kelhel,
-    microverse, github
+    microverse, github, axios, DBeaver, intellij, Webstorm, Kaggle, jQuery, postman
 } from '../assets';
 
 export const navLinks = [
@@ -154,6 +154,34 @@ const technologies = [
     {
         name: 'Vercel',
         icon: vercel,
+    },
+    {
+        name: 'Axios',
+        icon: axios,
+    },
+    {
+        name: 'DBeaver',
+        icon: DBeaver,
+    },
+    {
+        name: 'intellij',
+        icon: intellij,
+    },
+    {
+        name: 'Webstorm',
+        icon: Webstorm,
+    },
+    {
+        name: 'Kaggle',
+        icon: Kaggle,
+    },
+    {
+        name: 'jQuery',
+        icon: jQuery,
+    },
+    {
+        name: 'postman',
+        icon: postman,
     },
 ];
 
