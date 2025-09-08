@@ -224,7 +224,7 @@ const projects = [
             'An interactive self-ordering kiosk system with menu management, point rewards, and payment integration.',
         image: kiosk,
         repo: 'https://github.com/sjyun0507/kiosk_user.git',
-        demo: '',
+        demo: 'http://175.45.200.254:8080/',
     },
     {
         id: 'project-3',
